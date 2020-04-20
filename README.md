@@ -11,5 +11,8 @@ A stylized game set in the midst of a temple. Defeat the temple bosses to reach 
 - Don't merge to the master till we can all agree on it
 
 **SET UP**
+
 Go to the development branch
+
+
 ![](images/Capture.PNG)
