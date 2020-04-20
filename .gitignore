@@ -10,6 +10,9 @@
 *.userosscache
 *.sln.docstates
 
+# Removing SFML .dll's cus you gotta do that urself
+*.dll
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
