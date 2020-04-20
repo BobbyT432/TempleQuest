@@ -12,4 +12,4 @@ A stylized game set in the midst of a temple. Defeat the temple bosses to reach 
 
 **SET UP**
 Go to the development branch
-!(
+![](
