@@ -1,4 +1,4 @@
-# TempleQuest
+# Temple Quest (Name will probably change)
 
 A stylized game set in the midst of a temple. Defeat the temple bosses to reach the final boss, blahblahblah more lore here.
 
