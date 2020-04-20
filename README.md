@@ -10,5 +10,11 @@ A stylized game set in the midst of a temple. Defeat the temple bosses to reach 
 - Only program in the development branch, you can use "**git checkout development**" to switch to the development branch
 - Don't merge to the master till we can all agree on it
 
+**SET UP**
+To set this project up to begin developing, (I think this will work)
+- Download the entire repo
+- Install SFML into the project: https://www.youtube.com/watch?v=YfMQyOw1zik
+- Done
 
-WE GOT THIS WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+**NOTE**
+Whenever you push files, try not to push ANY of the **.dll** files that SFML gives you, install SFML manually on each of our machines that way we can just keep the files here and the solution file.
