@@ -10,5 +10,6 @@ A stylized game set in the midst of a temple. Defeat the temple bosses to reach 
 - Only program in the development branch, you can use "**git checkout development**" to switch to the development branch
 - Don't merge to the master till we can all agree on it
 
-
+**SET UP**
+Go to the development branch
 WE GOT THIS WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
