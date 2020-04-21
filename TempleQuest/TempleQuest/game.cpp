@@ -13,6 +13,7 @@ Game::~Game()
 void Game::initWindow()
 {
 	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), TITLE);
+	window->setFramerateLimit(120);
 }
 
 void Game::run()
@@ -23,6 +24,9 @@ void Game::run()
 	while (window->isOpen())
 	{
 		eventHandler();
+
+		updateDt(); 
+		showFPS();
 		window->clear();
 		window->display();
 	}
@@ -37,4 +41,23 @@ void Game::eventHandler() // handle all WINDOW events here, the event handler wi
 			window->close();
 		}
 	}
+}
+
+void Game::updateDt() // updates deltaTime with time it took to go a full frame
+{
+	deltaTime = clock.restart().asSeconds();
+	//std::cout << deltaTime << std::endl;
+}
+
+void Game::showFPS()
+{
+	frame++;
+	if (fpsClock.getElapsedTime().asSeconds() >= 1.00)
+	{
+		FPS = frame;
+		fpsClock.restart();
+		frame = 0;
+		std::cout << "FPS: " << FPS << std::endl;
+	}
+	
 }
