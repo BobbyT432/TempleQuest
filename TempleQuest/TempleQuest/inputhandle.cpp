@@ -1,11 +1,13 @@
 #include "inputhandle.h"
 
+// ---- Commands need to be initialized here ----
 InputHandler::InputHandler()
 {
 	// jump = new jmpCommand; this is an example, a jump command could be created in commands.cpp
 	assignKeys();
 }
 
+// ---- If entity is a player, the players commands are all handled here ----
 Command* InputHandler::handleInput(Entity& ent)
 {
 	float velocity = ent.getVelo();
@@ -20,6 +22,7 @@ Command* InputHandler::handleInput(Entity& ent)
 	return nullptr;
 }
 
+// ---- The main call function, takes in an entity and performs a command ----
 void InputHandler::assignCommand(Entity& ent)
 { 
 	Command* command = nullptr;
@@ -37,6 +40,7 @@ void InputHandler::assignCommand(Entity& ent)
 	}
 }
 
+// ---- Assigns key bindings based off of a file ----
 void InputHandler::assignKeys()
 {
 	std::ifstream keyBind;

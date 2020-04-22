@@ -8,6 +8,8 @@
 /*
 	Explanation: For an explanation on the command crap you see here, go to 'cmndmaster.h'
 */
+
+// ---- Handles all command inputs, PLAYER and AI ----
 class InputHandler
 {
 private: 
@@ -19,7 +21,7 @@ public:
 	Command* handleInput(Entity& ent);
 	void assignCommand(Entity& ent);
 
-	// will change to a better UI later, but for debugging purposes keep below code
+	// ---- Assigns key bindings ----
 	void assignKeys();
 };
 #endif
