@@ -19,4 +19,4 @@ ________________________________________________________________________________
 
 **NOTE**
 __________________________________________________________________________________________________________________________________________
-Whenever you push files, try not to push ANY of the **.dll** files that SFML gives you, install SFML manually on each of our machines that way we can just keep the files here and the solution file.
+Whenever you push files, try not to push ANY of the **.dll** files that SFML gives you, install SFML manually on each of our machines that way we can just keep the files here and the solution file
