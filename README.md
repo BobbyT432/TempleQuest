@@ -16,7 +16,6 @@ ________________________________________________________________________________
 - Download the entire repo
 - Install SFML into the project: https://www.youtube.com/watch?v=YfMQyOw1zik
 - Done
-- Structure: https://www.youtube.com/watch?v=IdKZpv6xqdw&list=PL6xSOsbVA1ebkU66okpi-KViAO8_9DJKg&index=1
 
 **NOTE**
 __________________________________________________________________________________________________________________________________________
