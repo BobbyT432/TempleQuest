@@ -25,15 +25,15 @@
     <Filter Include="Commands">
       <UniqueIdentifier>{1e9e1b79-6634-4161-b784-c533fdcf137f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{d23f5653-49a3-404c-9747-e4d0f034235a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="entity.cpp">
@@ -51,12 +51,15 @@
     <ClCompile Include="cmndmaster.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="statemanager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="state.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="entity.h">
@@ -73,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="cmndmaster.h">
       <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="statemanager.h">
+      <Filter>States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
