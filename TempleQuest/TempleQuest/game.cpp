@@ -1,6 +1,4 @@
 #include "game.h"
-#include "player.h"
-#include "inputhandle.h" // will need to move all these files somewhere better
 
 Game::Game()
 {
@@ -12,16 +10,19 @@ Game::~Game()
 	delete window;
 }
 
+// ---- This is where the main window is created ----
 void Game::initWindow()
 {
 	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), TITLE);
 	window->setFramerateLimit(120);
 }
 
+// ---- Our main game L O O P ----
 void Game::run()
 {
 	Player test; // TO BE REMOVED
 	InputHandler inputHandler;
+	StateManager state;
 
 	// this is our main game loop, each loop is ONE frame
 	// Possible problem: Depending on how fast the persons computer is, is how fast the game will run (which is bad)
@@ -33,6 +34,7 @@ void Game::run()
 		updateDt(); 
 		showFPS();
 
+		state.playState(STATE_GAME);
 		inputHandler.assignCommand(test);
 		window->clear();
 		window->draw(*(test.getBod()));
@@ -40,7 +42,8 @@ void Game::run()
 	}
 }
 
-void Game::eventHandler() // handle all WINDOW events here, the event handler will notify if something has happened, while generic input CONSTANTLY checks if somethings happened
+// ---- Handle all WINDOW events here (notifies if something has happened, as opposed to generic input which constantly checks if somethings happened) ----
+void Game::eventHandler() 
 {
 	while (window->pollEvent(event))
 	{
@@ -51,12 +54,14 @@ void Game::eventHandler() // handle all WINDOW events here, the event handler wi
 	}
 }
 
-void Game::updateDt() // updates deltaTime with time it took to go a full frame
+// ---- Deltatime will help solve the bug where faster computers run the game faster ----
+void Game::updateDt() 
 {
-	deltaTime = clock.restart().asSeconds();
+	deltaTime = clock.restart().asSeconds(); // updates deltaTime with time it took to go a full frame
 	//std::cout << deltaTime << std::endl;
 }
 
+// ---- Adds up frames each time the main loop cycles, once a second has passed display that frame count ----
 void Game::showFPS()
 {
 	frame++;
