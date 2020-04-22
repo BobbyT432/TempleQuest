@@ -1,7 +1,9 @@
 #ifndef ENTITY
 #define ENTITY
 
-#include "game.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <string>
 
 class Entity 
 {
