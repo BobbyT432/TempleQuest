@@ -152,6 +152,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="state.cpp" />
+    <ClCompile Include="statemanager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cmndmaster.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="inputhandle.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="state.h" />
+    <ClInclude Include="statemanager.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Keybindings.txt" />
