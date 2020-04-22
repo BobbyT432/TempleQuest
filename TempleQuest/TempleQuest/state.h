@@ -7,7 +7,7 @@
 #include <map>
 
 
-// ok so states will tell us what state the game is in
+// ok so states will tell us what state the game is in, read this: https://gameprogrammingpatterns.com/state.html
 // Main Menu is a state, is the game running is a state, pause menu is a state, etc etc
 // I'm only seeing how other people are making games and mostly everyone does this method
 
@@ -45,8 +45,5 @@ class GameState : public State
 public:
 	void run();
 };
-
-
-
 
 #endif
