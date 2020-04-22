@@ -1,5 +1,5 @@
 #include "inputhandle.h"
-#include "player.h" // this needs to be moved
+
 InputHandler::InputHandler()
 {
 	// jump = new jmpCommand; this is an example, a jump command could be created in commands.cpp
@@ -60,5 +60,5 @@ void InputHandler::assignKeys()
 		// store the values
 		keyMap[keyID] = (key - 65); // we subtract 65 because for ASCII, A = 65, however for SFML A = 0, everything after that is in linear order
 	}
-	
+	keyBind.close();
 }

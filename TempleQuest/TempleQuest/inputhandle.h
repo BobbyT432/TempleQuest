@@ -1,11 +1,9 @@
 #ifndef INPUT
 #define INPUT
 
-#include <SFML/Graphics.hpp>
-#include "cmndmaster.h"
-#include "commands.h"
 #include <fstream>
 #include <map>
+#include "commands.h"
 
 /*
 	Explanation: For an explanation on the command crap you see here, go to 'cmndmaster.h'
@@ -17,7 +15,6 @@ private:
 
 	std::map<std::string, int> keyMap; // this will hold all key commands and their respective key ID
 public:
-
 	InputHandler();
 	Command* handleInput(Entity& ent);
 	void assignCommand(Entity& ent);
