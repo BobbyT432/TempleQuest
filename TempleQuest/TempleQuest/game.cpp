@@ -1,4 +1,6 @@
 #include "game.h"
+#include "player.h"
+#include "inputhandle.h" // will need to move all these files somewhere better
 
 Game::Game()
 {
@@ -18,6 +20,9 @@ void Game::initWindow()
 
 void Game::run()
 {
+	Player test; // TO BE REMOVED
+	InputHandler inputHandler;
+
 	// this is our main game loop, each loop is ONE frame
 	// Possible problem: Depending on how fast the persons computer is, is how fast the game will run (which is bad)
 	// Possible solution: Lock the loop to 60 FPS
@@ -27,7 +32,10 @@ void Game::run()
 
 		updateDt(); 
 		showFPS();
+
+		inputHandler.assignCommand(test);
 		window->clear();
+		window->draw(*(test.getBod()));
 		window->display();
 	}
 }
@@ -59,5 +67,4 @@ void Game::showFPS()
 		frame = 0;
 		std::cout << "FPS: " << FPS << std::endl;
 	}
-	
 }

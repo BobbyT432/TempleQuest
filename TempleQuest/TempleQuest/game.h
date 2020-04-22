@@ -6,6 +6,12 @@
 #define HEIGHT 1080
 #define TITLE "Temple Quest"
 
+
+// keep most includes here, if we have too many includes in seperate areas, compile time will be bad 
+// also cool lil trick if you do 'CTRL + .' over a function decleration, it auto makes a definition in its .cpp equivalent
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <string>
 #include "state.h"
 
 class Game
