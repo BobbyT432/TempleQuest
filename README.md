@@ -4,7 +4,7 @@ A stylized game set in the midst of a temple. Defeat the temple bosses to reach 
 
 **FOR KEAGEN AND EINON**
 __________________________________________________________________________________________________________________________________________
-- Whenever you create a new class, make it in its own .h file and have its own .cpp file (yes there will be a lot of .h files at the end of this project but it will make shit so much easier for us)
+- Whenever you create a new class, make it in its own .h file and have its own .cpp file (yes there will be a lot of .h files at the end of this project but it will make stuff so much easier for us)
 - We gotta comment our code, that way we know what we were all trying to do 
 - Mess with SFML before editing this project (prevent confusion)
 - Great programming patterns: https://gameprogrammingpatterns.com/contents.html
