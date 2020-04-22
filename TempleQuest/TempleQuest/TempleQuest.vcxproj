@@ -144,15 +144,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cmndmaster.cpp" />
+    <ClCompile Include="commands.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="inputhandle.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="state.cpp" />
-    <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cmndmaster.h" />
+    <ClInclude Include="commands.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="inputhandle.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="state.h" />
-    <ClInclude Include="utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Keybindings.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
