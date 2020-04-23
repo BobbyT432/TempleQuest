@@ -57,6 +57,9 @@
     <ClCompile Include="statemanager.cpp">
       <Filter>States</Filter>
     </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
