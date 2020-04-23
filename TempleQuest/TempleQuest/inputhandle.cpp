@@ -3,7 +3,15 @@
 // ---- Commands need to be initialized here ----
 InputHandler::InputHandler()
 {
-	// jump = new jmpCommand; this is an example, a jump command could be created in commands.cpp
+	forward = new forwardCom;
+	down = new downCom;
+	right = new rightCom;
+	left = new leftCom;
+	downR = new downRCom;
+	downL = new downLCom;
+	forwardR = new forwardRCom;
+	forwardL = new forwardLCom;
+
 	assignKeys();
 }
 
@@ -11,19 +19,26 @@ InputHandler::InputHandler()
 Command* InputHandler::handleInput(Entity& ent)
 {
 	float velocity = ent.getVelo();
-	// the input handler will designate movement to call directly to its respected function
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { (ent.getEnt())->move(0, -velocity); }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])))	  { (ent.getEnt())->move(0, velocity);  }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"])))   { (ent.getEnt())->move(velocity, 0);  }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"])))    { (ent.getEnt())->move(-velocity, 0); }
 
-	// these commands here will return and run its specific command within COMMANDS
+	// ---- DIAGONALS ----
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return downR; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return downL; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return forwardR; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return forwardL; }
+
+	// ---- BASIC 4 MOVEMENTS ----
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { return forward; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"]))) { return down; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return right; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return left; }
+	
+	// ---- OTHER ----
 
 	return nullptr;
 }
 
 // ---- The main call function, takes in an entity and performs a command ----
-void InputHandler::assignCommand(Entity& ent)
+void InputHandler::assignCommand(Entity& ent, float deltaTime)
 { 
 	Command* command = nullptr;
 
@@ -36,7 +51,7 @@ void InputHandler::assignCommand(Entity& ent)
 	// if (command) just basically means is there a command to check? if so, then run that command
 	if (command)
 	{
-		command->run(ent);
+		command->run(ent, deltaTime);
 	}
 }
 
