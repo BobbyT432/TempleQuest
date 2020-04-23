@@ -37,7 +37,7 @@ void Game::run()
 		state.playState(STATE_GAME);
 		inputHandler.assignCommand(test);
 		window->clear();
-		window->draw(*(test.getBod()));
+		test.draw(*window);
 		window->display();
 	}
 }
