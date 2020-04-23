@@ -20,8 +20,8 @@ void Game::initWindow()
 // ---- Our main game L O O P ----
 void Game::run()
 {
-	Player test; // TO BE REMOVED
-	InputHandler inputHandler;
+	// ---- Our main player object and game state ----
+	Player player;
 	StateManager state;
 
 	// this is our main game loop, each loop is ONE frame
@@ -29,16 +29,20 @@ void Game::run()
 	// Possible solution: Lock the loop to 60 FPS
 	while (window->isOpen())
 	{
+		state.playState(STATE_GAME);
+
 		eventHandler();
 
+		// ---- Utilities ----
 		updateDt(); 
 		showFPS();
 
-		test.update(deltaTime);// to be removed
-		state.playState(STATE_GAME);
-		inputHandler.assignCommand(test);
+		// ---- Update the player with the time it took to cycle a frame ----
+		player.update(deltaTime); 
+
+		
 		window->clear(sf::Color(50,168,96));
-		test.draw(*window);
+		player.draw(*window);
 		window->display();
 	}
 }
