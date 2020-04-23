@@ -34,3 +34,8 @@ void Entity::draw(sf::RenderWindow& window)
 {
 	window.draw(*entity);
 }
+
+void Entity::setDir(dir dir_)
+{
+	currentDir = dir_;
+}

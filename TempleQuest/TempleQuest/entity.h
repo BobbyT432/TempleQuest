@@ -4,6 +4,16 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
+#include "animation.h"
+
+// ---- Used to tell which idle animation to use, when hes done walking right, idle right, etc ----
+enum dir
+{
+	FORWARD,
+	RIGHT,
+	DOWN,
+	LEFT,
+};
 
 // ---- The base class for which every entity in the game will be derived from ----
 class Entity 
@@ -16,9 +26,12 @@ protected:
 	float velocity;
 	float hp;
 
+	dir currentDir;
+
 	// ---- What will be displayed of the entity ----
 	sf::RectangleShape* entity; // This is the ACTUAL entity, the thing that will be displayed to the screen
 	sf::Texture* entTexture; // the entities texture
+
 public:
 	
 	Entity();
@@ -37,5 +50,9 @@ public:
 
 	// ---- SFML Properties ----
 	virtual void draw(sf::RenderWindow& window);
+
+	// ---- Animation object to be used whenever he needs it ----
+	Animation* animate; // this is public so each entity can have an animation feature and be accessed my commands
+	virtual void setDir(dir dir_);
 };
 #endif
