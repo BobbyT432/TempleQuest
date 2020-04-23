@@ -2,6 +2,7 @@
 #define COMMAND
 
 #include "entity.h"
+#include "animation.h"
 
 // based off of: https://gameprogrammingpatterns.com/command.html
 /*
@@ -22,8 +23,7 @@
 class Command // handles all user input
 {
 public:
-
-	virtual void run(Entity& ent) = 0;
-	virtual ~Command() = 0;
+	virtual void run(Entity& ent, float deltaTime) = 0;
+	virtual ~Command() = default;
 };
 #endif
