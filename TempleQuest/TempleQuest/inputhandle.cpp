@@ -12,10 +12,10 @@ Command* InputHandler::handleInput(Entity& ent)
 {
 	float velocity = ent.getVelo();
 	// the input handler will designate movement to call directly to its respected function
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { (ent.getBod())->move(0, -velocity); }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])))	  { (ent.getBod())->move(0, velocity);  }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"])))   { (ent.getBod())->move(velocity, 0);  }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"])))    { (ent.getBod())->move(-velocity, 0); }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { (ent.getEnt())->move(0, -velocity); }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])))	  { (ent.getEnt())->move(0, velocity);  }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"])))   { (ent.getEnt())->move(velocity, 0);  }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"])))    { (ent.getEnt())->move(-velocity, 0); }
 
 	// these commands here will return and run its specific command within COMMANDS
 
