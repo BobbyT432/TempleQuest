@@ -3,7 +3,6 @@
 
 //----- keep most includes here, if we have too many includes in seperate areas, compile time will be bad -----
 #include "player.h"
-#include "inputhandle.h"
 #include <map>
 
 
