@@ -11,7 +11,7 @@ Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float tran
 	uvRect.height = texture->getSize().y / spriteCount.y;
 }
 
-
+//test
 
 void Animation::update(int row, float deltaTime_)
 {
