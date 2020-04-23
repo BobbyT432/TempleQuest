@@ -34,9 +34,10 @@ void Game::run()
 		updateDt(); 
 		showFPS();
 
+		test.update(deltaTime);// to be removed
 		state.playState(STATE_GAME);
 		inputHandler.assignCommand(test);
-		window->clear();
+		window->clear(sf::Color(50,168,96));
 		test.draw(*window);
 		window->display();
 	}
