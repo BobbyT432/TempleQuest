@@ -30,7 +30,7 @@ private:
 public:
 	InputHandler();
 	Command* handleInput(Entity& ent);
-	void assignCommand(Entity& ent, float deltaTime);
+	bool assignCommand(Entity& ent, float deltaTime);
 
 	// ---- Assigns key bindings ----
 	void assignKeys();

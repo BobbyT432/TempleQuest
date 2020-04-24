@@ -38,7 +38,7 @@ Command* InputHandler::handleInput(Entity& ent)
 }
 
 // ---- The main call function, takes in an entity and performs a command ----
-void InputHandler::assignCommand(Entity& ent, float deltaTime)
+bool InputHandler::assignCommand(Entity& ent, float deltaTime)
 { 
 	Command* command = nullptr;
 
@@ -52,7 +52,9 @@ void InputHandler::assignCommand(Entity& ent, float deltaTime)
 	if (command)
 	{
 		command->run(ent, deltaTime);
+		return 1;
 	}
+	return 0;
 }
 
 // ---- Assigns key bindings based off of a file ----

@@ -8,16 +8,19 @@ Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float tran
 	transitTime = transitTime_;
 	deltaTime = 0;
 	curSprite.x = 0;
+	rowCount = 0;
 
 	// ----Depending on how many sprites are in a row, divide by the PIXEL size that get size returns ----
 	uvRect.width = texture->getSize().x / spriteCount.x;  // getSize() returns the pixel count, for example if a picture is 100 pixels long and theres 5 sprites, dividing by 5 should give you 20 pixels long for each sprite
 	uvRect.height = texture->getSize().y / spriteCount.y;
 }
 
-void Animation::update(int row, float deltaTime_)
+void Animation::update(int row, float rowCount_, float deltaTime_)
 {
 	curSprite.y = row; // the row is which row of the sprite to act on, curSprite is an unsigned vector, so it only accepts positive values
-	
+
+	rowCount = rowCount_;
+
 	deltaTime += deltaTime_; // delta time in this class will add the time it takes for each frame to pass, this gives us a better clock then just doing seconds because it is relative to the players time it takes to change frames
 	// if we did a clock based off of actual time, it will be weird because it does not match the users frame rate
 	// by doing delta time, its relative to the users frame rate
@@ -34,7 +37,7 @@ void Animation::update(int row, float deltaTime_)
 
 		curSprite.x++; // change to the next sprite in the row
 
-		if (curSprite.x >= spriteCount.x) // once it reaches the last sprite, loop back to the first one in the row
+		if (curSprite.x >= rowCount_) // once it reaches the last sprite, loop back to the first one in the row
 		{
 			curSprite.x = 0;
 		}
@@ -44,4 +47,13 @@ void Animation::update(int row, float deltaTime_)
 	uvRect.left = curSprite.x * uvRect.width; // uvRect.left is the LEFT side of the sprite, curSprite.x = 0 in the first frame, so 0 * width of each SPRITE will give you the left side of the sprite, 1 * width of the example sprite above will take you 20 pixels to the right, which is the left of the next sprite
 	uvRect.top = curSprite.y * uvRect.height; // uvRect.top is the TOP side of the sprite, if you're only doing the first row, it'll be 0 the entire time
 	// also uvRect already knows the size of each capture rectangle that needs to go over every sprite, uvRect.width and uvRect.height are already initialized in the constructor
+}
+
+void Animation::setStatic(int row, float index)
+{
+	curSprite.y = row;
+	curSprite.x = index;
+
+	uvRect.left = curSprite.x * uvRect.width;
+	uvRect.top = curSprite.y * uvRect.height;
 }

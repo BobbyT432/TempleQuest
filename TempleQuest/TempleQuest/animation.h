@@ -9,6 +9,7 @@ private:
 	// ---- Animation properties ----
 	sf::Vector2f spriteCount;
 	sf::Vector2u curSprite; // current sprite
+	float rowCount; // seperate variable to split sprites up into rows
 
 	// ---- Variables that smooth the animation ----
 	float deltaTime; // time since last animation cycle
@@ -23,6 +24,7 @@ public:
 	sf::IntRect uvRect; // uv Rectangle
 
 	// ---- This has to be always running, thats why it will update each frame ----
-	void update(int row, float deltaTime_);
+	void update(int row, float rowCount_, float deltaTime_);
+	void setStatic(int row, float index);
 };
 #endif

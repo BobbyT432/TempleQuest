@@ -16,11 +16,9 @@ Player::Player()
 	entTexture->loadFromFile("textures/player.png");
 	entity->setTexture(entTexture);
 
-	animate = new Animation(entTexture, sf::Vector2f(7.6, 1), 0.07); // the reason i did (7.6, 1), is because x represents how many sprites, by giving it more leeway it'l skew the image a bit more
+	animate = new Animation(entTexture, sf::Vector2f(7.8, 8.7), 0.07); // the reason i did (7.8, 8.7), is because x represents how many sprites, by giving it more leeway it'l skew the image a bit more
 	//entTexture->setSmooth(true);
 
-	
-	
 	// ---- Error check ----
 	if (!entTexture) { std::cout << "**PLAYER.PNG NOT FOUND**" << std::endl; }
 }
@@ -40,19 +38,25 @@ sf::RectangleShape* Player::getEnt()
 // ---- Update will work hand in hand with the main game loop, cleans up the loop a bit and allows us to organize what needs to be updated JUST for the player ----
 void Player::update(float deltaTime)
 {
-	inputHandler.assignCommand(*this, deltaTime); 
+	isControl = inputHandler.assignCommand(*this, deltaTime); 
 
+	entity->setTextureRect(animate->uvRect); // since uvRect is a public variable we can set it easily like this
+
+	// **CURRENT ISSUE: FIX DIRECTIONAL MOVEMENT**
 	// ---- If they were walking right, their idle animation needs to be right, etc ----
-	switch (currentDir)
+	if (!isControl)
 	{
-	case FORWARD: 
-		break;
-	case RIGHT:
-		break;
-	case DOWN:
-		break;
-	case LEFT:
-		break;
+		switch (currentDir)
+		{
+		case FORWARD: animate->setStatic(0, 2);
+			break;
+		case RIGHT: animate->setStatic(0, 1);
+			break;
+		case DOWN: animate->setStatic(0, 0);
+			break;
+		case LEFT: animate->setStatic(0, 3);
+			break;
+		}
 	}
 }
 
