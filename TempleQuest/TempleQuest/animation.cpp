@@ -10,7 +10,7 @@ Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float tran
 	curSprite.x = 0;
 	rowCount = 0;
 
-	// ----Depending on how many sprites are in a row, divide by the PIXEL size that get size returns ----
+	// ----Depending on how many sprites are in a row, divide by the PIXEL size that getSize returns ----
 	uvRect.width = texture->getSize().x / spriteCount.x;  // getSize() returns the pixel count, for example if a picture is 100 pixels long and theres 5 sprites, dividing by 5 should give you 20 pixels long for each sprite
 	uvRect.height = texture->getSize().y / spriteCount.y;
 }
