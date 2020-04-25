@@ -1,5 +1,13 @@
 #include "player.h"
 
+void Player::draw(sf::RenderWindow& window)
+{
+	window.setView(FOV);
+	
+	// ---- Overrided because setView needs to be called before drawing ----
+	window.draw(*entity);
+}
+
 Player::Player()
 {
 	// ---- Players attributes ----
@@ -11,11 +19,15 @@ Player::Player()
 	// ---- Create the player ----
 	entity = new sf::RectangleShape(sf::Vector2f(100, 100));// This is the players figure (its a rectangle to represent the texture which is shaped like so)
 
+	// ---- Size of the FOV ----
+	FOV.setSize(sf::Vector2f(1920, 1080));
+	FOV.zoom(0.7);
+
 	// ---- Assign textures ---- (THIS MAY BE REMOVED)
 	entTexture = new sf::Texture();
 	entTexture->loadFromFile("textures/player.png");
 	entity->setTexture(entTexture);
-
+	
 	animate = new Animation(entTexture, sf::Vector2f(7.8, 8.7), 0.07); // the reason i did (7.8, 8.7), is because x represents how many sprites, by giving it more leeway it'l skew the image a bit more
 	//entTexture->setSmooth(true);
 
@@ -38,11 +50,15 @@ sf::RectangleShape* Player::getEnt()
 // ---- Update will work hand in hand with the main game loop, cleans up the loop a bit and allows us to organize what needs to be updated JUST for the player ----
 void Player::update(float deltaTime)
 {
+	// ---- Input handling ----
 	isControl = inputHandler.assignCommand(*this, deltaTime); 
 
+	// ---- Animation ----
 	entity->setTextureRect(animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
-	// **CURRENT ISSUE: FIX DIRECTIONAL MOVEMENT**
+	// ---- Update view ----
+	FOV.setCenter(sf::Vector2f(entity->getPosition().x + 32, entity->getPosition().y + 40)); // dont ask why we have to set these values manually, I've tried getting the sprites dimensions and doing an eqn but nope
+
 	// ---- If they were walking right, their idle animation needs to be right, etc ----
 	if (!isControl)
 	{
@@ -50,7 +66,7 @@ void Player::update(float deltaTime)
 		{
 		case FORWARD: animate->setStatic(0, 2);
 			break;
-		case RIGHT: animate->setStatic(0, 1);
+		case RIGHT: animate->setStatic(0, 4);
 			break;
 		case DOWN: animate->setStatic(0, 0);
 			break;
