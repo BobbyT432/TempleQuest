@@ -1,4 +1,5 @@
 #include "game.h"
+#include "tilemap.h" // to be moved
 
 Game::Game()
 {
@@ -13,8 +14,9 @@ Game::~Game()
 // ---- This is where the main window is created ----
 void Game::initWindow()
 {
-	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), TITLE);
+	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), TITLE, sf::Style::Fullscreen);
 	window->setFramerateLimit(120);
+	window->setMouseCursorVisible(false);
 }
 
 // ---- Our main game L O O P ----
@@ -23,6 +25,11 @@ void Game::run()
 	// ---- Our main player object and game state ----
 	Player player;
 	StateManager state;
+	
+	// ---- TO BE REMOVED ----
+	sf::RectangleShape test(sf::Vector2f(100, 100));
+	int test[10];
+	//TileMap tilemap("textures/player.png", 32, 32, 200, 200, test);
 
 	// this is our main game loop, each loop is ONE frame
 	// Possible problem: Depending on how fast the persons computer is, is how fast the game will run (which is bad)
@@ -40,9 +47,10 @@ void Game::run()
 		// ---- Update the player with the time it took to cycle a frame ----
 		player.update(deltaTime); 
 
-		
 		window->clear(sf::Color(50,168,96));
+		window->draw(test); // TO BE REMOVED
 		player.draw(*window);
+		//tilemap.update(*window);
 		window->display();
 	}
 }
