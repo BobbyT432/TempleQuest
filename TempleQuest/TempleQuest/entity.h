@@ -16,6 +16,8 @@ enum dir
 };
 
 // ---- The base class for which every entity in the game will be derived from ----
+
+// IDEA : DERIVE THIS FROM INPUT HANDLE, MAYBE THIS WILL ALLOW US TO PLACE INPUTHANDLER HERE AND NOT IN PLAYER
 class Entity 
 {
 protected:
@@ -26,6 +28,7 @@ protected:
 	float velocity;
 	float hp;
 
+	// ---- Used for animation ----
 	dir currentDir;
 
 	// ---- What will be displayed of the entity ----
