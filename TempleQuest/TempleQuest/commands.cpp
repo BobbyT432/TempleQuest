@@ -7,7 +7,7 @@ void forwardCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(0, -velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(2, 8, deltaTime);
+	ent.animate->update(2, 6, deltaTime);
 	ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
@@ -22,7 +22,7 @@ void downCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(0, velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(1, 8, deltaTime);
+	ent.animate->update(1, 6, deltaTime);
 	//ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
@@ -64,7 +64,7 @@ void downRCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(velocity, velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(1, 8, deltaTime);
+	ent.animate->update(1, 6, deltaTime);
 	//ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
@@ -78,7 +78,7 @@ void downLCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(-velocity, velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(1, 8, deltaTime);
+	ent.animate->update(1, 6, deltaTime);
 	//ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
@@ -92,7 +92,7 @@ void forwardRCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(velocity, -velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(2, 8, deltaTime);
+	ent.animate->update(2, 6, deltaTime);
 	//ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
@@ -106,7 +106,7 @@ void forwardLCom::run(Entity& ent, float deltaTime)
 	ent.getEnt()->move(-velocity, -velocity);
 
 	// ---- Animate the movement ----
-	ent.animate->update(2, 8, deltaTime);
+	ent.animate->update(2, 6, deltaTime);
 	//ent.getEnt()->setTextureRect(ent.animate->uvRect); // since uvRect is a public variable we can set it easily like this
 
 	// ---- Set the direction so the idle animation knows which way to face ----
