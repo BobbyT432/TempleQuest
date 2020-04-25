@@ -28,7 +28,7 @@ void Game::run()
 	
 	// ---- TO BE REMOVED ----
 	sf::RectangleShape test(sf::Vector2f(100, 100));
-	int test[10];
+	//int test[10];
 	//TileMap tilemap("textures/player.png", 32, 32, 200, 200, test);
 
 	// this is our main game loop, each loop is ONE frame
