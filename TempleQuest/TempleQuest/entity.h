@@ -9,10 +9,10 @@
 // ---- Used to tell which idle animation to use, when hes done walking right, idle right, etc ----
 enum dir
 {
-	FORWARD,
-	RIGHT,
-	DOWN,
-	LEFT,
+	FORWARD, 
+	RIGHT, 
+	DOWN, 
+	LEFT, 
 };
 
 // ---- The base class for which every entity in the game will be derived from ----

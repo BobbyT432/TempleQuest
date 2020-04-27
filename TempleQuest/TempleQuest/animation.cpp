@@ -1,6 +1,7 @@
 #include "animation.h"
 #include <iostream>
 
+// all animation does is set the size of a rectangle pretty much (it does NOT set the texture of the uvRect)
 Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float transitTime_)
 {
 	// ---- sf::Vector2f takes in two values, X and Y, this allows us to figure out how many sprites are in the picture ----
@@ -10,9 +11,10 @@ Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float tran
 	curSprite.x = 0;
 	rowCount = 0;
 
+	std::cout << "Size of pixels on x: " << texture->getSize().x / spriteCount.x;
 	// ----Depending on how many sprites are in a row, divide by the PIXEL size that getSize returns ----
 	uvRect.width = texture->getSize().x / spriteCount.x;  // getSize() returns the pixel count, for example if a picture is 100 pixels long and theres 5 sprites, dividing by 5 should give you 20 pixels long for each sprite
-	uvRect.height = texture->getSize().y / spriteCount.y;
+	uvRect.height = texture->getSize().y / spriteCount.y; 
 }
 
 void Animation::update(int row, float rowCount_, float deltaTime_)
