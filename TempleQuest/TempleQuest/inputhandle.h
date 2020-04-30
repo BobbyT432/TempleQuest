@@ -3,7 +3,7 @@
 
 #include <fstream>
 #include <map>
-#include "commands.h"
+#include "character.h"
 
 /*
 	Explanation: For an explanation on the command crap you see here, go to 'cmndmaster.h'
@@ -29,8 +29,8 @@ private:
 	std::map<std::string, int> keyMap; // this will hold all key commands and their respective key ID
 public:
 	InputHandler();
-	Command* handleInput(Entity& ent);
-	bool assignCommand(Entity& ent, float deltaTime);
+	Command* handleInput(Character& ent);
+	bool assignCommand(Character& ent, float deltaTime, Collision& col);
 
 	// ---- Assigns key bindings ----
 	void assignKeys();

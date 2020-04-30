@@ -23,7 +23,7 @@
 class Command // handles all user input
 {
 public:
-	virtual void run(Entity& ent, float deltaTime) = 0;
+	virtual void run(Entity& ent, float deltaTime, Collision& col) = 0;
 	virtual ~Command() = default;
 };
 #endif

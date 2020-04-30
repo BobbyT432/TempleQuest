@@ -11,7 +11,6 @@ Animation::Animation(sf::Texture* texture, sf::Vector2f spriteCount_, float tran
 	curSprite.x = 0;
 	rowCount = 0;
 
-	std::cout << "Size of pixels on x: " << texture->getSize().x / spriteCount.x;
 	// ----Depending on how many sprites are in a row, divide by the PIXEL size that getSize returns ----
 	uvRect.width = texture->getSize().x / spriteCount.x;  // getSize() returns the pixel count, for example if a picture is 100 pixels long and theres 5 sprites, dividing by 5 should give you 20 pixels long for each sprite
 	uvRect.height = texture->getSize().y / spriteCount.y; 
@@ -26,8 +25,6 @@ void Animation::update(int row, float rowCount_, float deltaTime_)
 	deltaTime += deltaTime_; // delta time in this class will add the time it takes for each frame to pass, this gives us a better clock then just doing seconds because it is relative to the players time it takes to change frames
 	// if we did a clock based off of actual time, it will be weird because it does not match the users frame rate
 	// by doing delta time, its relative to the users frame rate
-
-	std::cout << deltaTime << std::endl;
 
 	// EXAMPLE: if one person has a computer that is extremely fast and it takes 0.01 second to cycle a frame, and the transition time is 5 seconds, it'll continually add up until its been 5 seconds to transfer to the next frame
 	// if another person has a computer that is very slow, and it takes 5 seconds to cycle a frame, and the transition time is 5 seconds, it'll instantly change to the next frame every 5 seconds, it kind of matches the other person

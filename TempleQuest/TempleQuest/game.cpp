@@ -1,5 +1,4 @@
 #include "game.h"
-#include "tilemap.h" // to be moved
 #include <sstream> // to be moved
 
 Game::Game()
@@ -17,22 +16,17 @@ void Game::initWindow()
 {
 	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), TITLE, sf::Style::Fullscreen);
 	window->setFramerateLimit(120);
-	//window->setMouseCursorVisible(false);
+	window->setMouseCursorVisible(false);
+	//window->setVerticalSyncEnabled(true);
 }
 
 // ---- Our main game L O O P ----
 void Game::run()
 {
 	// ---- Our main player object and game state ----
-	Player player;
 	StateManager state;
-	
 
-	// ---- TO BE REMOVED ----
-	sf::RectangleShape test(sf::Vector2f(100, 100));
-	
-	TileMap map("textures/03.png", "levels/03.csv", sf::Vector2f(32, 32), 15, 15);
-
+	Level01 lvl01(*window);
 	// this is our main game loop, each loop is ONE frame
 	// Possible problem: Depending on how fast the persons computer is, is how fast the game will run (which is bad)
 	// Possible solution: Lock the loop to 60 FPS
@@ -45,16 +39,9 @@ void Game::run()
 		// ---- Utilities ----
 		updateDt(); 
 		showFPS();
-
 		
-		
-		// ---- Update the player with the time it took to cycle a frame ----
-		player.update(deltaTime); 
-
 		window->clear(sf::Color(90, 188, 216));
-		window->draw(map);
-		player.draw(*window);
-
+		lvl01.update(deltaTime);
 		window->display();
 	}
 }

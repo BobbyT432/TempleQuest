@@ -16,7 +16,7 @@ InputHandler::InputHandler()
 }
 
 // ---- If entity is a player, the players commands are all handled here ----
-Command* InputHandler::handleInput(Entity& ent)
+Command* InputHandler::handleInput(Character& ent)
 {
 	float velocity = ent.getVelo();
 
@@ -27,10 +27,10 @@ Command* InputHandler::handleInput(Entity& ent)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return forwardL; }
 
 	// ---- BASIC 4 MOVEMENTS ----
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { return forward; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"]))) { return down; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return right; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return left; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { return new forwardCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"]))) { return new downCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return new rightCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return new leftCom; }
 	
 	// ---- OTHER ----
 
@@ -38,7 +38,7 @@ Command* InputHandler::handleInput(Entity& ent)
 }
 
 // ---- The main call function, takes in an entity and performs a command ----
-bool InputHandler::assignCommand(Entity& ent, float deltaTime)
+bool InputHandler::assignCommand(Character& ent, float deltaTime, Collision &col)
 { 
 	Command* command = nullptr;
 
@@ -46,12 +46,15 @@ bool InputHandler::assignCommand(Entity& ent, float deltaTime)
 	if (ent.isPlayer()) { command = handleInput(ent); }
 
 	// if the entity is not a player (an AI), read its AI function and it will return a command
-	else { /* return a command from an ai class */ }
+	else
+	{
+		command = ent.basicAI(ent);
+	}
 
 	// if (command) just basically means is there a command to check? if so, then run that command
 	if (command)
 	{
-		command->run(ent, deltaTime);
+		command->run(ent, deltaTime, col);
 		return 1;
 	}
 	return 0;

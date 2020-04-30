@@ -4,12 +4,9 @@
 #include "inputhandle.h"
 
 // ---- The main players class ----
-class Player : public Entity
+class Player : public Character
 {
 private:
-	// ---- If the user moves, its in control ----
-	bool isControl;
-
 	// ---- View support ----
 	sf::View FOV;
 	
@@ -23,9 +20,10 @@ public:
 	// ---- Overrided from entity so we can set a view port ----
 	virtual void draw(sf::RenderWindow& window);
 
-	// --- This is the actual entity, this can be plugged into draw() and it will display the player ----
-	virtual sf::RectangleShape* getEnt();
+	// sf::RectangleShape* getEnt();
 
-	void update(float deltaTime); // CHANGE TO ALL ENTITIES
+	void update(float deltaTime); 
+
+	
 };
 #endif

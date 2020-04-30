@@ -16,6 +16,13 @@ Player::Player()
 	velocity = 0.9;
 	currentDir = DOWN;
 
+	// ---- Animate row variables ----
+	forwardRow = 2;
+	downRow = 1;
+	leftRow = 3;
+	rightRow = 4;
+	maxAnim = 6; 
+
 	// ---- Create the player ----
 	entity = new sf::RectangleShape(sf::Vector2f(32, 32));// This is the players figure (its a rectangle to represent the texture which is shaped like so)
 	// ORIGINAL: size 100, 100, zoom 0.7, velocity 2 animation 0.07
@@ -23,6 +30,7 @@ Player::Player()
 	FOV.setSize(sf::Vector2f(1920, 1080));
 	FOV.zoom(0.2);
 
+	entity->setPosition(230, 200); 
 	// ---- Assign textures ---- (THIS MAY BE REMOVED)
 	entTexture = new sf::Texture();
 	entTexture->loadFromFile("textures/player.png");
@@ -42,16 +50,11 @@ Player::~Player()
 	delete entity;
 }
 
-sf::RectangleShape* Player::getEnt()
-{
-	return entity;
-}
-
 // ---- Update will work hand in hand with the main game loop, cleans up the loop a bit and allows us to organize what needs to be updated JUST for the player ----
 void Player::update(float deltaTime)
 {
 	// ---- Input handling ----
-	isControl = inputHandler.assignCommand(*this, deltaTime); 
+	isControl = inputHandler.assignCommand(*this, deltaTime, *col); 
 
 	// ---- Animation ----
 	entity->setTextureRect(animate->uvRect); // ok so uvRect has the SIZE of the box that hovers over the texture file (since entity already has a texture from the player constructor)
@@ -76,5 +79,8 @@ void Player::update(float deltaTime)
 		}
 	}
 }
+
+
+
 
 

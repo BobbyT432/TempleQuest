@@ -30,6 +30,11 @@ float Entity::getVelo()
 	return velocity;
 }
 
+sf::RectangleShape* Entity::getEnt()
+{
+	return entity;
+}
+
 void Entity::draw(sf::RenderWindow& window)
 {
 	window.draw(*entity);
@@ -38,4 +43,32 @@ void Entity::draw(sf::RenderWindow& window)
 void Entity::setDir(dir dir_)
 {
 	currentDir = dir_;
+}
+
+int Entity::getFRow()
+{
+	return forwardRow;
+}
+
+int Entity::getDRow()
+{
+	return downRow;
+}
+int Entity::getLRow()
+{
+	return leftRow;
+}
+int Entity::getRRow()
+{
+	return rightRow;
+}
+
+int Entity::getAnim()
+{
+	return maxAnim;
+}
+
+void Entity::setCol(Collision& col_)
+{
+	col = &col_;
 }

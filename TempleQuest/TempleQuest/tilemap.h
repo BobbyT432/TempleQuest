@@ -28,9 +28,6 @@ private:
 public:
 	TileMap(std::string texLoc, std::string mapLoc_, sf::Vector2f tileSize, float mapWidth_, float mapHeight_);
 	
-	// ---- TESTING ----
-	void initGrid();
-	//void update(sf::RenderWindow &window);
 	void load();
 
 	// ---- SFML functions ----

@@ -2,8 +2,8 @@
 #define STATE
 
 //----- keep most includes here, if we have too many includes in seperate areas, compile time will be bad -----
-#include "player.h"
 #include <map>
+#include "level01.h"
 
 
 // ok so states will tell us what state the game is in, read this: https://gameprogrammingpatterns.com/state.html
