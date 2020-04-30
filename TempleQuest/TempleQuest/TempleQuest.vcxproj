@@ -146,26 +146,36 @@
   <ItemGroup>
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="cmndmaster.cpp" />
+    <ClCompile Include="collision.cpp" />
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="inputhandle.cpp" />
+    <ClCompile Include="level01.cpp" />
+    <ClCompile Include="levelmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="skeleman.cpp" />
     <ClCompile Include="state.cpp" />
     <ClCompile Include="statemanager.cpp" />
+    <ClCompile Include="character.cpp" />
     <ClCompile Include="tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="cmndmaster.h" />
+    <ClInclude Include="collision.h" />
     <ClInclude Include="commands.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="inputhandle.h" />
+    <ClInclude Include="level01.h" />
+    <ClInclude Include="levelmanager.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="skeleman.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="statemanager.h" />
+    <ClInclude Include="character.h" />
     <ClInclude Include="tilemap.h" />
   </ItemGroup>
   <ItemGroup>
