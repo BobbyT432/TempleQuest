@@ -8,8 +8,6 @@
 //  will be placed in here, so instead of it being in entity, it is a layer up and entity can now perform without the need for commands
 class Character: public Entity
 {
-private:
-
 public:
 	virtual void setTarget(sf::Vector2f targetPos);
 	virtual Command* basicAI(Entity& ent);

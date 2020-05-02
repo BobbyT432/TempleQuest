@@ -9,10 +9,11 @@ class Level01 : public LevelManager
 {
 private:
 	Player *player;
-	Skeleman* skeleman;
+	sf::Vector2f transitPos; // where the player has to be for it to transition levels
 public:
 	Level01(sf::RenderWindow& window_);
-	void update(float deltaTime);
+	unsigned int update(float deltaTime);
+	bool checkTransit();
 	void draw();
 };
 #endif

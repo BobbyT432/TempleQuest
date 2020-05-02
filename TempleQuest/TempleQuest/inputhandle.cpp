@@ -3,28 +3,24 @@
 // ---- Commands need to be initialized here ----
 InputHandler::InputHandler()
 {
-	forward = new forwardCom;
-	down = new downCom;
-	right = new rightCom;
-	left = new leftCom;
-	downR = new downRCom;
-	downL = new downLCom;
-	forwardR = new forwardRCom;
-	forwardL = new forwardLCom;
-
-	assignKeys();
+	assignKeys(); // key bindings
+	death = 0;
+	atkAnim = 0;
 }
 
 // ---- If entity is a player, the players commands are all handled here ----
 Command* InputHandler::handleInput(Character& ent)
 {
 	float velocity = ent.getVelo();
+	// ---- OTHER ----
+	if (ent.getHP() <= 0) { death = 1; return new deathCom; }
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { atkClock.restart(); atkAnim = 1; return new attackCom; }
 
 	// ---- DIAGONALS ----
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return downR; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return downL; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return forwardR; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return forwardL; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return new downRCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["DOWN_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return new downLCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return new forwardRCom; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"])) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return new forwardLCom; }
 
 	// ---- BASIC 4 MOVEMENTS ----
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["FORWARD_KEY"]))) { return new forwardCom; }
@@ -32,8 +28,7 @@ Command* InputHandler::handleInput(Character& ent)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["RIGHT_KEY"]))) { return new rightCom; }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyMap["LEFT_KEY"]))) { return new leftCom; }
 	
-	// ---- OTHER ----
-
+	
 	return nullptr;
 }
 
@@ -41,14 +36,24 @@ Command* InputHandler::handleInput(Character& ent)
 bool InputHandler::assignCommand(Character& ent, float deltaTime, Collision &col)
 { 
 	Command* command = nullptr;
-
-	// if the entity is a player, check for keyboard input
-	if (ent.isPlayer()) { command = handleInput(ent); }
-
-	// if the entity is not a player (an AI), read its AI function and it will return a command
-	else
+	if (!death)
 	{
-		command = ent.basicAI(ent);
+		if (!atkAnim) // timer for the attack animation to play through
+		{
+			// if the entity is a player, check for keyboard input
+			if (ent.isPlayer()) { command = handleInput(ent); }
+			// if the entity is not a player (an AI), read its AI function and it will return a command
+			else
+			{
+				if (ent.getHP() <= 0) { command = new deathCom; }
+				else { command = ent.basicAI(ent); }
+			}
+		}
+		else
+		{
+			if (atkClock.getElapsedTime().asSeconds() >= 0.25) { atkAnim = 0; }
+			command = new attackCom;
+		}
 	}
 
 	// if (command) just basically means is there a command to check? if so, then run that command

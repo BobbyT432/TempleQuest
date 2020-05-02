@@ -1,10 +1,16 @@
 #ifndef STATE
 #define STATE
 
+
+// this will not stay in the final release, use this for debugging purposes to mess with the size of the window
+#define WIDTH 1920
+#define HEIGHT 1080
+#define TITLE "Temple Quest"
+
 //----- keep most includes here, if we have too many includes in seperate areas, compile time will be bad -----
 #include <map>
 #include "level01.h"
-
+#include "level02.h"
 
 // ok so states will tell us what state the game is in, read this: https://gameprogrammingpatterns.com/state.html
 // Main Menu is a state, is the game running is a state, pause menu is a state, etc etc
@@ -15,8 +21,8 @@ enum State_
 {
 	STATE_INTRO,
 	STATE_GAME,
-	STATE_PAUSE,
-	STATE_CUTSCENE,
+	STATE_DEAD,
+	STATE_WON,
 };
 
 // ----- class interface for each state -----
@@ -26,7 +32,7 @@ protected:
 	
 public:
 	//State();
-	virtual void run() = 0;
+	virtual void run(sf::RenderWindow *window) = 0;
 	virtual ~State() = default; // virtual destructor cus we will be inheriting this class
 };
 
@@ -35,14 +41,26 @@ public:
 class IntroState : public State
 {
 public:
-	void run();
+	void run(sf::RenderWindow* window);
 };
 
 // The game state will only be in action when the player should have control (the entire game except cutscenes, etc)
 class GameState : public State
 {
 public:
-	void run();
+	void run(sf::RenderWindow* window);
+};
+
+class deadState : public State
+{
+public:
+	void run(sf::RenderWindow* window);
+};
+
+class wonState : public State
+{
+public:
+	void run(sf::RenderWindow* window);
 };
 
 #endif

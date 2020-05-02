@@ -34,7 +34,7 @@ void TileMap::load()
 	mapFile.open(mapLoc);
 
 	// ---- TILE ID VARIABLES ----
-	int tileID[900];
+	int tileID[MAPSIZE];
 	std::string temp;
 	std::string data;
 	int index = 0;

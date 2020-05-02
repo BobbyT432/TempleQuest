@@ -1,12 +1,17 @@
 #ifndef TILEMAP
 #define TILEMAP
 
+#define MAPSIZE 10000
+
 #include <SFML/Graphics.hpp> // for now
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <list>
 #include <sstream>
+
+
 
 class TileMap : public sf::Drawable, public sf::Transformable // we need these SFML classes to override the draw class
 {

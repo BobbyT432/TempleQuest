@@ -13,18 +13,9 @@
 class InputHandler
 {
 private: 
-	// --- Commands ----
-	Command* forward;
-	Command* down;
-	Command* right;
-	Command* left;
-
-	// --- Diagonal Commands: I understand this is silly, I could've just left in normal movement and it would do diagonals, however now AI can access these commands and do the same ----
-	// ---- Also now diagonals have their own functions, so we could do diagonal animations ----
-	Command* downR;
-	Command* downL;
-	Command* forwardR;
-	Command* forwardL;
+	bool atkAnim;
+	bool death;
+	sf::Clock atkClock;
 
 	std::map<std::string, int> keyMap; // this will hold all key commands and their respective key ID
 public:

@@ -75,4 +75,16 @@ private:
 public:
 	virtual void run(Entity& ent, float deltaTime, Collision& col);
 };
+
+class attackCom : public Command
+{
+public:
+	virtual void run(Entity& ent, float deltaTime, Collision& col);
+};
+
+class deathCom : public Command
+{
+public:
+	virtual void run(Entity& ent, float deltaTime, Collision& col);
+};
 #endif

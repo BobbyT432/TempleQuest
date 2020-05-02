@@ -12,7 +12,7 @@ private:
 	State_ nextState;
 public:
 	StateManager();
-	void playState(State_ state);
+	void playState(State_ state, sf::RenderWindow* window);
 };
 
 #endif

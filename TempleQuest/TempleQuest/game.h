@@ -1,11 +1,6 @@
 #ifndef GAME
 #define GAME
 
-// this will not stay in the final release, use this for debugging purposes to mess with the size of the window
-#define WIDTH 1920
-#define HEIGHT 1080
-#define TITLE "Temple Quest"
-
 // also cool lil trick if you do 'CTRL + .' over a function decleration, it auto makes a definition in its .cpp equivalent
 #include "statemanager.h"
 

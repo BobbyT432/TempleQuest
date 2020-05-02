@@ -150,8 +150,10 @@
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="ganon.cpp" />
     <ClCompile Include="inputhandle.cpp" />
     <ClCompile Include="level01.cpp" />
+    <ClCompile Include="level02.cpp" />
     <ClCompile Include="levelmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
@@ -168,8 +170,10 @@
     <ClInclude Include="commands.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="ganon.h" />
     <ClInclude Include="inputhandle.h" />
     <ClInclude Include="level01.h" />
+    <ClInclude Include="level02.h" />
     <ClInclude Include="levelmanager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="skeleman.h" />

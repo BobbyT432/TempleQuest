@@ -30,6 +30,11 @@ protected:
 	float velocity;
 	float hp;
 	bool isControl; // a flag that says if this entity is currently moving
+	float targetAggro;// aggro range for AI
+	float atkRange; // range of attack
+	float knockback; // amount of pixels to send target backwards
+	float hpDealt; // how much hp to subtract when attacking
+	sf::Vector2f targetPos; // For AI
 
 	Collision* col;
 
@@ -41,11 +46,20 @@ protected:
 	sf::Texture* entTexture; // the entities texture
 
 	// ---- Animate row variables ----
-	int forwardRow;
-	int downRow;
-	int leftRow;
-	int rightRow;
-	int maxAnim;
+	float forwardRow;
+	float downRow;
+	float leftRow;
+	float rightRow;
+	float attackFRow;
+	float attackDRow;
+	float attackLRow;
+	float attackRRow;
+	float DDRow;
+	float DDColumn;
+	float maxAnim;
+
+	// ---- Contains all entities on a level, allows for collision checking on entities with eachother ----
+	std::list<Entity*> entGroup;
 public:
 	Entity();
 	virtual ~Entity() = default;
@@ -57,14 +71,16 @@ public:
 	virtual float getVelo();
 
 	// ---- To be overrided ----
-	//virtual void onInteract(Entity* ent); // this function will perform something when another entity interacts with this objects entity
+	virtual void onInteract() = 0;
+	virtual void setGroup(std::list<Entity*> &entGroup_);
+	virtual std::list<Entity*>* getGroup();
 
 	// ---- Return the entities figure (what needs to be rendered) --S--
 	virtual sf::RectangleShape* getEnt();
 
 	// ---- SFML Properties ----
 	virtual void draw(sf::RenderWindow& window);
-	virtual void update(float deltaTime) = 0;
+	virtual bool update(float deltaTime) = 0;
 
 	// ---- Collision Properties ----
 	void setCol(Collision& col_);
@@ -72,11 +88,27 @@ public:
 	// ---- Animation object to be used whenever he needs it ----
 	Animation* animate; // this is public so each entity can have an animation feature and be accessed my commands
 	virtual void setDir(dir dir_);
+	virtual dir getDir();
 
-    virtual int getFRow();
-	virtual int getDRow();
-	virtual int getLRow();
-	virtual int getRRow();
-	virtual int getAnim();
+	// ---- Animation properties ----
+    virtual float getFRow();
+	virtual float getDRow();
+	virtual float getLRow();
+	virtual float getRRow();
+	virtual float getAFRow();
+	virtual float getADRow();
+	virtual float getALRow();
+	virtual float getARRow();
+	virtual float getDDRow();
+	virtual float getDDCol();
+	virtual float getAnim();
+
+	// ---- Character attributes ----
+	virtual void minusHP(float hp_);
+	virtual void addHP(float hp_);
+	virtual float getHP();
+
+	// ---- For AI ----
+	virtual void setTarget(sf::Vector2f targetPos_);
 };
 #endif

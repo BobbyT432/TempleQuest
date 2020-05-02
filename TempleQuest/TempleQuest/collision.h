@@ -1,12 +1,9 @@
 #ifndef COLLISION
 #define COLLISION
 
-#include <SFML/Graphics.hpp>
-#include <sstream>
-#include <string>
+#include "tilemap.h"
+#include <vector>
 #include <iostream>
-#include <fstream>
-#include <list>
 
 // This is not an efficent way to do collisions but we have 2 days left and I gotta get it done
 class Collision
@@ -14,7 +11,9 @@ class Collision
 private:
 	float gridSize;
 	int gridBoxSz;
-	
+	int rowSize;
+	int columnSize;
+
 	struct gridNode
 	{
 		bool collider;
@@ -22,7 +21,7 @@ private:
 		sf::Vector2i gridID;
 		sf::RectangleShape gridBox;
 	};
-	std::list<gridNode> gridList;
+	std::vector<gridNode> gridVector;
 public:
 	Collision(std::string colLoc_, float gridSize_);
 	void loadCol(std::string colLoc_);

@@ -26,23 +26,37 @@ void Game::run()
 	// ---- Our main player object and game state ----
 	StateManager state;
 
-	Level01 lvl01(*window);
+	Level01 lvl01(*window); // idea: create a queue / stack / etc that holds all levels, if transit = 1, then pop the last level out and go to the next
+	Level02 lvl02(*window);
+
+	unsigned int transit = 1; // 0 = dead, 1 = continue, 2 = transition
+
+	// ---- What state the game starts in ----
+	state.playState(STATE_GAME, window);
+
 	// this is our main game loop, each loop is ONE frame
 	// Possible problem: Depending on how fast the persons computer is, is how fast the game will run (which is bad)
 	// Possible solution: Lock the loop to 60 FPS
+
 	while (window->isOpen())
 	{
-		state.playState(STATE_GAME);
-
 		eventHandler();
 
 		// ---- Utilities ----
-		updateDt(); 
+		updateDt();
 		showFPS();
+
 		
-		window->clear(sf::Color(90, 188, 216));
-		lvl01.update(deltaTime);
-		window->display();
+			window->clear();
+			if (transit != 3 && transit != 0)
+			{
+			if (transit == 1) { transit = lvl01.update(deltaTime); }
+			if (transit == 2) { transit = lvl02.update(deltaTime); }
+			window->display();
+
+		}
+		if (transit == 0) { state.playState(STATE_DEAD, window); }
+		if (transit == 3) { state.playState(STATE_WON, window); }
 	}
 }
 
