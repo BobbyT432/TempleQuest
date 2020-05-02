@@ -40,8 +40,6 @@ Level02::Level02(sf::RenderWindow& window_)
 		entGroup.emplace_front(skele);
 	}
 
-
-
 	// ---- Acknowledge the entity groups by all entities ----
 	huskyGanon->setGroup(entGroup);
 	player->setGroup(entGroup);
