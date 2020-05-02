@@ -1,18 +1,15 @@
-# Temple Quest (Name will probably change)
+# The Legend of The Crimson King
 
-A stylized game set in the midst of a temple. Defeat the temple bosses to reach the final boss, blahblahblah more lore here.
+A stylized game based on an island in the midst of terror.
 
-**FOR KEAGEN AND EINON**
-- Whenever you create a new class, make it in its own .h file and have its own .cpp file (yes there will be a lot of .h files at the end of this project but it will make shit so much easier for us)
-- We gotta comment our code, that way we know what we were all trying to do 
-- Mess with SFML before editing this project (prevent confusion)
-- Great programming patterns: https://gameprogrammingpatterns.com/contents.html
-- Only program in the development branch, you can use "**git checkout development**" to switch to the development branch
-- Don't merge to the master till we can all agree on it
+Built in two weeks for our C/C++ Data Structures class, using SFML, (team of three).
 
-**SET UP**
 
-Go to the development branch
-
+# NOTE
+- Code is not yet merged to the master branch, to view the code switch to the **development** branch
+- Collisions are not **enabled** in the game, they were scrapped last minute in the main island
+- Sounds were also scrapped last minute due to an error
+- The game will close if you die / win
+- The code is pretty sloppy in some areas (my first full game i've ever made)
 
 ![](images/Capture.PNG)
