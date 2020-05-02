@@ -6,7 +6,6 @@
 #include "player.h"
 #include "skeleman.h"
 
-
 class IntroLevel : public LevelManager
 {
 private:
