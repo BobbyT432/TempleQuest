@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{e4e3fbaa-4a24-4789-a083-51932efe33a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Items">
+      <UniqueIdentifier>{e80d7b79-09cc-4878-b1b8-2f385e83c5b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Characters">
+      <UniqueIdentifier>{f049b874-96bd-492a-972b-a1b02e24e73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{1e9e1b79-6634-4161-b784-c533fdcf137f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{d23f5653-49a3-404c-9747-e4d0f034235a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{666ad19a-46e3-4afc-a71e-08e47676a765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maps">
+      <UniqueIdentifier>{4b87130a-14ab-465b-8847-731b6db322de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Entities\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="inputhandle.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="commands.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="cmndmaster.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="statemanager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tilemap.cpp">
+      <Filter>Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelmanager.cpp">
+      <Filter>Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="level01.cpp">
+      <Filter>Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleman.cpp">
+      <Filter>Entities\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Entities\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="inputhandle.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="commands.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="cmndmaster.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="statemanager.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tilemap.h">
+      <Filter>Maps</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelmanager.h">
+      <Filter>Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="level01.h">
+      <Filter>Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleman.h">
+      <Filter>Entities\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Entities\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Keybindings.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
