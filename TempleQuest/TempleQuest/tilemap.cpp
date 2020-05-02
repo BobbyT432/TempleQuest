@@ -16,14 +16,6 @@ TileMap::TileMap(std::string texLoc, std::string mapLoc_, sf::Vector2f tileSize,
 	mapVerts.resize((mapWidth * mapHeight) * 4); // we need to size the ARRAY to fit the size of our LEVEL (the reason we * by 4 is because (i think) to account for each of its 4 vertices
 	// one quad has 4 vertices, and you need the area of the map to get the amount of quads you need, and since each quad has 4 vertices.. * that by 4
 	
-	// ---- Debugging purposes ----
-	font.loadFromFile("fonts/ReturnofGanon.ttf");
-	text.setCharacterSize(35);
-	text.setFillColor(sf::Color::White);
-	text.setFont(font);
-	text.setPosition(200, 200);
-	text.setString("Bobby is the best programmer");
-
 	load();
 }
 

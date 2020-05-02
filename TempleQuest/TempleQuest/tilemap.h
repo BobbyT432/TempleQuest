@@ -10,7 +10,7 @@
 #include <map>
 #include <list>
 #include <sstream>
-
+#include <SFML/Audio.hpp>
 
 
 class TileMap : public sf::Drawable, public sf::Transformable // we need these SFML classes to override the draw class
