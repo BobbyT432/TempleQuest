@@ -1,6 +1,7 @@
 #include "collision.h"
 #include "math.h"
 
+#define COLSIZE 10000
 Collision::Collision(std::string colLoc_, float gridSize_)
 {
 	gridSize = gridSize_;
@@ -13,7 +14,7 @@ void Collision::loadCol(std::string colLoc_)
 {
 	std::string colLoc = colLoc_;
 	
-	int gridID[MAPSIZE]; 
+	int gridID[COLSIZE]; 
 	rowSize = std::sqrt(gridSize);
 	columnSize = std::sqrt(gridSize);
 	gridBoxSz = 32;
@@ -43,10 +44,8 @@ void Collision::loadCol(std::string colLoc_)
 		for (int column = 0; column < columnSize; column++)
 		{
 			gridNode* temp = new gridNode;
-
+			
 			temp->gridID = sf::Vector2i(column, row); // this is the position that we will use (like 0, 4)
-			temp->gridPos = sf::Vector2f(column * gridBoxSz, row * gridBoxSz);
-			temp->gridBox.setPosition(temp->gridPos);
 
 			int curCol = gridID[column + (row * columnSize)]; // current collision ID
 
