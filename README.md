@@ -1,6 +1,15 @@
-# TempleQuest
+# The Legend of The Crimson King
 
-**NOTE** 
+A stylized game based on an island in the midst of terror.
 
-The code base here contains elements of Visual Studio, just ignore any **.vcxproj** or **.sln** files if you're just trying
-to view the code. These elements will most likely be removed in the future.
+Built in two weeks for our C/C++ Data Structures class, using SFML, (team of three).
+
+
+# NOTE
+- Code is not yet merged to the master branch, to view the code switch to the **development** branch
+- Collisions are not **enabled** in the game, they were scrapped last minute in the main island
+- Sounds were also scrapped last minute due to an error
+- The game will close if you die / win
+- The code is pretty sloppy in some areas (my first full game i've ever made)
+
+![](images/Capture.PNG)
