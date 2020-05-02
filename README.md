@@ -2,7 +2,7 @@
 
 A stylized game based on an island in the midst of terror.
 
-Built in two weeks for our C/C++ Data Structures class, using SFML, (team of three).
+Built in two weeks for our end of the year project in a C/C++ Data Structures class, using SFML, (team of three).
 
 
 # NOTE
