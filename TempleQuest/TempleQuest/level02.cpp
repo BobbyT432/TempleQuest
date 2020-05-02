@@ -11,7 +11,6 @@ Level02::Level02(sf::RenderWindow& window_)
 	// ---- Create all entities ----
 	const int skelemanAmt = 5;
 	
-
 	player = new Player;
 	huskyGanon = new Ganon;
 

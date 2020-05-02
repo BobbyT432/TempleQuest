@@ -4,15 +4,16 @@ Level01::Level01(sf::RenderWindow &window_)
 {
 	window = &window_;
 
-	col = new Collision("levels/collisions/test_C.csv", 10000); // area of tilemap
+	col = new Collision("levels/collisions/boca_C.csv", 10000); // area of tilemap
 	zero = new TileMap("textures/boca_back.png", "levels/bocabowa_B.csv", sf::Vector2f(32, 32), 100, 100);
 	one = new TileMap("textures/boca_front.png", "levels/bocabowa_F.csv", sf::Vector2f(32, 32), 100, 100);
    
-
 	// ---- Create all entities ----
 	const int skelemanAmt = 30;
 
 	player = new Player;
+
+	player->getEnt()->setPosition(607, 2535);
 
 	// ---- Set collision for player in the scene ----
 	player->setCol(*col);
@@ -78,7 +79,7 @@ unsigned int Level01::update(float deltaTime)
 	if (transit == 0) { return 0; } // if the player died, return 0
 
 	// ---- Continue on ----
-	return 1;
+	return 4;
 }
 
 bool Level01::checkTransit()
