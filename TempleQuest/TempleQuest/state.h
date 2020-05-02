@@ -11,6 +11,7 @@
 #include <map>
 #include "level01.h"
 #include "level02.h"
+#include "introlevel.h"
 
 // ok so states will tell us what state the game is in, read this: https://gameprogrammingpatterns.com/state.html
 // Main Menu is a state, is the game running is a state, pause menu is a state, etc etc
@@ -59,6 +60,8 @@ public:
 
 class wonState : public State
 {
+private:
+	sf::Clock winTimer;
 public:
 	void run(sf::RenderWindow* window);
 };
