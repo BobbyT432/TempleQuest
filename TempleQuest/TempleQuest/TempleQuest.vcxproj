@@ -148,10 +148,12 @@
     <ClCompile Include="cmndmaster.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="commands.cpp" />
+    <ClCompile Include="elderjoh.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ganon.cpp" />
     <ClCompile Include="inputhandle.cpp" />
+    <ClCompile Include="introlevel.cpp" />
     <ClCompile Include="level01.cpp" />
     <ClCompile Include="level02.cpp" />
     <ClCompile Include="levelmanager.cpp" />
@@ -168,10 +170,12 @@
     <ClInclude Include="cmndmaster.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="commands.h" />
+    <ClInclude Include="elderjoh.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="ganon.h" />
     <ClInclude Include="inputhandle.h" />
+    <ClInclude Include="introlevel.h" />
     <ClInclude Include="level01.h" />
     <ClInclude Include="level02.h" />
     <ClInclude Include="levelmanager.h" />
