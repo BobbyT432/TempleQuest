@@ -44,6 +44,8 @@ void deadState::run(sf::RenderWindow* window)
 
 void wonState::run(sf::RenderWindow* window)
 {
+	if (winTimer.getElapsedTime().asSeconds() >= 10) { winTimer.restart(); }
+	if (winTimer.getElapsedTime().asSeconds() >= 3) { window->close(); }
 	// ---- Game over screen ----
 	sf::RectangleShape winScreen(sf::Vector2f(1920, 1080));
 	sf::FloatRect winRect = winScreen.getLocalBounds();
