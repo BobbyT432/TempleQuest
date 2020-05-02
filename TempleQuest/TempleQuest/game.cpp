@@ -28,6 +28,7 @@ void Game::run()
 
 	Level01 lvl01(*window); // idea: create a queue / stack / etc that holds all levels, if transit = 1, then pop the last level out and go to the next
 	Level02 lvl02(*window);
+	IntroLevel introlvl(*window);
 
 	unsigned int transit = 1; // 0 = dead, 1 = continue, 2 = transition
 
@@ -40,21 +41,21 @@ void Game::run()
 
 	while (window->isOpen())
 	{
+	
 		eventHandler();
 
 		// ---- Utilities ----
 		updateDt();
 		showFPS();
 
-		
-			window->clear();
+			window->clear(sf::Color(168,182,189));
 			if (transit != 3 && transit != 0)
 			{
-			if (transit == 1) { transit = lvl01.update(deltaTime); }
+			if (transit == 1) { transit = introlvl.update(deltaTime); }
+			if (transit == 4) { transit = lvl01.update(deltaTime); }
 			if (transit == 2) { transit = lvl02.update(deltaTime); }
 			window->display();
-
-		}
+			}
 		if (transit == 0) { state.playState(STATE_DEAD, window); }
 		if (transit == 3) { state.playState(STATE_WON, window); }
 	}
