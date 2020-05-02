@@ -28,7 +28,7 @@ void downCom::run(Entity& ent, float deltaTime, Collision& col)
 
 	tempPos = ent.getPos(); // holds current position of the entity
 
-	tempPos.y += velocity; // added velocity to show what the FUTURE position would be
+	tempPos.y += velocity + 32; // added velocity to show what the FUTURE position would be
 
 	if (col.getGridCol(col.getGridLoc(tempPos)) == 0) // checks the future positions grid location to see if its a collider or not
 	{
@@ -49,7 +49,7 @@ void rightCom::run(Entity& ent, float deltaTime, Collision& col)
 
 	tempPos = ent.getPos(); // holds current position of the entity
 
-	tempPos.x += velocity; // added velocity to show what the FUTURE position would be
+	tempPos.x += velocity + 32; // added velocity to show what the FUTURE position would be
 
 	if (col.getGridCol(col.getGridLoc(tempPos)) == 0) // checks the future positions grid location to see if its a collider or not
 	{
@@ -91,8 +91,8 @@ void downRCom::run(Entity& ent, float deltaTime, Collision& col)
 
 	tempPos = ent.getPos(); // holds current position of the entity
 
-	tempPos.x += velocity;
-	tempPos.y += velocity; // added velocity to show what the FUTURE position would be
+	tempPos.x += velocity + 32;
+	tempPos.y += velocity + 32; // added velocity to show what the FUTURE position would be
 
 	if (col.getGridCol(col.getGridLoc(tempPos)) == 0) // checks the future positions grid location to see if its a collider or not
 	{
@@ -116,7 +116,7 @@ void downLCom::run(Entity& ent, float deltaTime, Collision& col)
 	tempPos = ent.getPos(); // holds current position of the entity
 
 	tempPos.x -= velocity;
-	tempPos.y += velocity; // added velocity to show what the FUTURE position would be
+	tempPos.y += velocity + 32; // added velocity to show what the FUTURE position would be
 
 	if (col.getGridCol(col.getGridLoc(tempPos)) == 0) // checks the future positions grid location to see if its a collider or not
 	{
@@ -140,7 +140,7 @@ void forwardRCom::run(Entity& ent, float deltaTime, Collision& col)
 
 	tempPos = ent.getPos(); // holds current position of the entity
 
-	tempPos.x += velocity;
+	tempPos.x += velocity + 32;
 	tempPos.y -= velocity; // added velocity to show what the FUTURE position would be
 
 	if (col.getGridCol(col.getGridLoc(tempPos)) == 0) // checks the future positions grid location to see if its a collider or not
