@@ -7,10 +7,10 @@ Built in two weeks for our end of the year project in a C/C++ Data Structures cl
 Thanks to Keagen for making the trailer!
 https://www.youtube.com/watch?v=p0F573dvcco
 
-I'll build the game soon after I finish my semester and post the build here!
+# BUILD
+Currently, there is no build for this yet. To run the game you'll need to install SFML and merge the code here.
 
 # NOTE
-- Code is not yet merged to the master branch, to view the code switch to the **development** branch
 - Collisions are not **enabled** in the game, they were scrapped last minute in the main island
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
