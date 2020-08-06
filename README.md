@@ -16,4 +16,3 @@ Currently, there is no build for this yet. To run the game you'll need to instal
 - The game will close if you die / win
 - The code is pretty sloppy in some areas (my first full game i've ever made)
 
-![](images/Capture.PNG)
