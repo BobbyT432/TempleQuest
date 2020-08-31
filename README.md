@@ -14,5 +14,5 @@ Currently, there is no build for this yet. To run the game you'll need to instal
 - Collisions are not **enabled** in the game, they were scrapped last minute in the main island
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
-- The code is pretty sloppy in some areas (my first full game i've ever made)
+
 
