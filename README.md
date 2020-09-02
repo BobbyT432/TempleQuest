@@ -17,5 +17,22 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - The game will close if you die / win
 
 # SCREENSHOTS
+![](Screenshots/17.png)
+![](Screenshots/18.png)
+![](Screenshots/19.png)
 ![](Screenshots/1.png)
-
+![](Screenshots/2.png)
+![](Screenshots/3.png)
+![](Screenshots/4.png)
+![](Screenshots/5.png)
+![](Screenshots/6.png)
+![](Screenshots/7.png)
+![](Screenshots/8.png)
+![](Screenshots/9.png)
+![](Screenshots/10.png)
+![](Screenshots/11.png)
+![](Screenshots/12.png)
+![](Screenshots/13.png)
+![](Screenshots/14.png)
+![](Screenshots/15.png)
+![](Screenshots/16.png)
