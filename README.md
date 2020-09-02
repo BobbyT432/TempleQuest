@@ -17,7 +17,7 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - The game will close if you die / win
 
 # ARTWORK
-- Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources
+- Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources (This will not be a finished game, just for a school project)
 - Additional artwork was made by Keagen 
 
 # SCREENSHOTS
