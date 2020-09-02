@@ -16,6 +16,10 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
 
+# ARTWORK
+- Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources
+- Additional artwork was made by Keagen 
+
 # SCREENSHOTS
 ![](Screenshots/17.png)
 ![](Screenshots/18.png)
