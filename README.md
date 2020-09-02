@@ -15,9 +15,10 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - Collisions are not **enabled** in the game, they were scrapped last minute in the main island
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
+-**This will not be a finished game, just for a school project**
 
 # ARTWORK
-- Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources **(This will not be a finished game, just for a school project)**
+- Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources
 - Additional artwork was made by Keagen 
 
 # SCREENSHOTS
