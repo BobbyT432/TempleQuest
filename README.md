@@ -22,6 +22,13 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources
 - Additional artwork was made by Keagen 
 
+# TOOLS
+- Visual Studio 2019 
+- Tiled 
+- Aseprite 
+- Paint.net
+- Excel (Tilemap generation)
+
 # SCREENSHOTS
 ![](Screenshots/17.png)
 ![](Screenshots/18.png)
