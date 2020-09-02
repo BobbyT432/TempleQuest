@@ -1,5 +1,7 @@
 # The Legend of The Crimson King
 
+**This will not be a finished game it was just for a school project**
+
 A stylized game based on an island in the midst of terror.
 
 Built in two weeks for our end of the year project in a C/C++ Data Structures class, using SFML, (team of three).
@@ -15,7 +17,6 @@ To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 - Collisions are not **enabled** in the game, they were scrapped last minute in the main island
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
--**This will not be a finished game, just for a school project**
 
 # ARTWORK
 - Most artwork in this game is reused from Nintendos Zelda: LTTP / various other sources
