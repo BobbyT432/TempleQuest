@@ -14,7 +14,7 @@ Currently, there is no build for this yet. To run the game you'll need to instal
 To install SFML: https://www.youtube.com/watch?v=YfMQyOw1zik
 
 # NOTE
-- Collisions are not **enabled** in the game, they were scrapped last minute in the main island
+- Collisions are not **enabled** in the game, they were scrapped last minute on the main island
 - Sounds were also scrapped last minute due to an error
 - The game will close if you die / win
 
