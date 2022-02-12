@@ -7,9 +7,6 @@ Built in two weeks for our C/C++ Data Structures class, using SFML, (team of thr
 
 # NOTE
 - Code is not yet merged to the master branch, to view the code switch to the **development** branch
-- Collisions are not **enabled** in the game, they were scrapped last minute in the main island
-- Sounds were also scrapped last minute due to an error
-- The game will close if you die / win
 - The code is pretty sloppy in some areas (my first full game i've ever made)
 
 ![](images/Capture.PNG)
